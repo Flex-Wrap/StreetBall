@@ -1,0 +1,34 @@
+[
+    {
+      "name": "Dokk1",
+      "location": "Hack Kampmanns Plads 2, 8000 Aarhus C",
+      "description": "The courts by the sea are known to be the most popular place to play street football in Aarhus. Both the northern and southern courts are equipped with tall, long nets, that prevent the ball from falling in the water. Its proximity to the university’s Navitas building and the library Dokk1, makes these courts the ideal exercising spots for students.",
+      "gallery": [
+        "dokk1_1.png", "dokk1_3.png", "dokk1_4.png", "dokk1_5.png",
+        "dokk1_6.png", "dokk1_7.png", "dokk1_8.png", "dokk1_9.png", "dokk1_10.png",
+        "dokk1_11.png", "dokk1_12.png", "dokk1_13.png", "dokk1_14.png", "dokk1_15.png",
+        "dokk1_16.png", "dokk1_17.png", "dokk1_18.png"]
+    },
+    {
+      "name": "Frederiksbjerg",
+      "location": "F. Vestergaards Gade 5, 8000 Aarhus C",
+      "description": "Another awesome court in the city.",
+      "gallery": [
+        "Frederiksbjerg1.png", "Frederiksbjerg2.png", "Frederiksbjerg3.png", "Frederiksbjerg4.png", "Frederiksbjerg5.png",
+        "Frederiksbjerg6.png", "Frederiksbjerg7.png", "Frederiksbjerg8.png", "Frederiksbjerg9.png", "Frederiksbjerg10.png",
+        "Frederiksbjerg11.png", "Frederiksbjerg13.png", "Frederiksbjerg14.png", "Frederiksbjerg15.png",
+        "Frederiksbjerg16.png", "Frederiksbjerg17.png", "Frederiksbjerg18.png", "Frederiksbjerg20.png",
+        "Frederiksbjerg21.png", "Frederiksbjerg22.png", "Frederiksbjerg23.png"]
+
+    },
+    {
+      "name": "Grønnegade",
+      "location": "Grønnegade",
+      "description": "Perfect for friendly matches.",
+      "gallery": [
+        "Grønnegade1.png", "Grønnegade2.png", "Grønnegade3.png", "Grønnegade4.png", "Grønnegade5.png",
+        "Grønnegade6.png", "Grønnegade7.png", "Grønnegade8.png", "Grønnegade9.png", "Grønnegade10.png",
+        "Grønnegade11.png", "Grønnegade12.png", "Grønnegade13.png", "Grønnegade14.png", "Grønnegade15.png",
+        "Grønnegade16.png", "Grønnegade17.png", "Grønnegade18.png"]
+    }
+  ]

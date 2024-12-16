@@ -1,0 +1,75 @@
+@import url(general.css);
+
+body{
+    background-color: var(--background-color-light);
+}
+
+.text-header{
+    letter-spacing: 8px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 460px;  /* You can adjust this value as needed */
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;  /* Aligns the video bottom part and centers the width */
+    transform: translateX(-50%);  /* Offsets the video to center it horizontally */
+}
+
+.court-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.court-card {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.court-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.court-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    width: 100%;
+}
+
+.court-title p{
+    text-transform: uppercase;
+}
