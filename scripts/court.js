@@ -34,12 +34,12 @@ function populateCourtPage() {
     document.getElementById('court-description').textContent = court.description;
 
     // Update facilities
-    document.getElementById('court-number').textContent = `Courts: ${court.gallery.length}`;
-    document.getElementById('court-type').textContent = `Type: Asphalt`; // Update with dynamic data if available
-    document.getElementById('court-caged').textContent = `Caged: Entirely`; // Update with dynamic data if available
-    document.getElementById('court-size').textContent = `Size: 4 on 4`; // Update with dynamic data if available
-    document.getElementById('court-mini').textContent = `Mini Goals: Yes`; // Update with dynamic data if available
-    document.getElementById('court-lamps').textContent = `Lamps: Yes`; // Update with dynamic data if available
+    document.getElementById('court-number').textContent = `Courts: ${court.number}`;
+    document.getElementById('court-type').textContent = `Type: ${court.type}`; // Update with dynamic data if available
+    document.getElementById('court-caged').textContent = `Caged: ${court.caged}`; // Update with dynamic data if available
+    document.getElementById('court-size').textContent = `Size: ${court.size}`; // Update with dynamic data if available
+    document.getElementById('court-mini').textContent = `Mini Goals: ${court.miniGoals}`; // Update with dynamic data if available
+    document.getElementById('court-lamps').textContent = `Lamps: ${court.lamps}`; // Update with dynamic data if available
 
     // Update hero image
     const heroImg = document.querySelector('.hero-img');
@@ -47,7 +47,7 @@ function populateCourtPage() {
         heroImg.style.backgroundImage = `url('../resources/images/${court.gallery[2]}')`;
     }
 
-    // Populate gallery (optional)
+    // Populate gallery
     const galleryContainer = document.querySelector('.gallery-container');
     court.gallery.forEach(image => {
         const imgElement = document.createElement('img');
@@ -55,6 +55,14 @@ function populateCourtPage() {
         imgElement.alt = court.name;
         galleryContainer.appendChild(imgElement);
     });
+    
+    const mapButton = document.getElementById('map-button');
+    if (mapButton) {
+        mapButton.addEventListener('click', () => {
+            const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(court.location)}`;
+            window.open(googleMapsUrl, '_blank');
+        });
+    }
 }
 
 // Run the function on page load

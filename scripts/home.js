@@ -28,7 +28,7 @@ async function loadCourts() {
             // Add a click event listener to the court card to redirect to courtPage.html
             courtCard.addEventListener('click', () => {
                 // Redirect to courtPage.html and pass the court name as a query parameter
-                window.location.href = `courtPage.html?court=${encodeURIComponent(court.name)}`;
+                window.location.href = `court.html?court=${encodeURIComponent(court.name)}`;
             });
 
             // Append the court card to the court container

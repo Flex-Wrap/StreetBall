@@ -2,6 +2,8 @@
 
 body{
     background-color: var(--background-color-light);
+    justify-content: center;
+    align-items: center;
 }
 
 .text-header{
@@ -9,17 +11,34 @@ body{
 }
 
 .content{
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 32px;
 }
 
 .hero-container {
     position: relative;
     width: 100%;
-    height: 460px;  /* You can adjust this value as needed */
+    height: 500px;  /* You can adjust this value as needed */
     overflow: hidden;
+}
+
+.hero-container .text-sub-header {
+    position: absolute; /* Allows positioning relative to the .hero-container */
+    top: 0px;
+    margin: 0; /* Remove default margin */
+    padding: 8px 16px; /* Optional: Add some padding around the text */
+    background: rgba(0, 0, 0, 0.6); /* Optional: Add a semi-transparent background */
+    color: white; /* Ensure text is visible */
+    font-size: 18px; /* Adjust font size */
+    width: 100%;
+    z-index: 1; /* Ensures it stays above the video */
+}
+
+.hero-container .btn-orange {
+    position: absolute; /* Allows positioning relative to the .hero-container */
+    bottom: 16px; /* Distance from the bottom */
+    left: 50%; /* Position the left edge of the button in the center */
+    transform: translateX(-50%); /* Shift the button left by half its width to truly center it */
+    z-index: 1; /* Ensures it stays above the video */
 }
 
 .hero-video {
@@ -72,4 +91,38 @@ body{
 
 .court-title p{
     text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+
+    .hero-video {
+        width: 100%; /* Video spans the full width of the content */
+        height: 100%; /* Automatically adjust height to maintain aspect ratio */
+        left: 0; /* Align video to the left */
+        transform: none;
+    }
+
+    .hero-container .btn-orange {
+        bottom: 16px; /* Keep button near the bottom */
+        right: 16px; /* Position it at the bottom-right corner */
+        left: auto; /* Remove center alignment */
+        transform: none; /* No need for centering transform */
+    }
+
+    .court-container {
+        display: grid; /* Change to grid for even column widths */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-fit columns, min width 250px */
+        gap: 16px; /* Adjust gap between grid items */
+        justify-items: center; /* Center cards horizontally */
+    }
+
+    .court-card {
+        width: 100%; /* Cards now fit within the grid column */
+        height: 400px; /* Adjust height if needed for desktop */
+    }
+
+    .court-card img {
+        width: 100%;
+        height: 100%;
+    }
 }

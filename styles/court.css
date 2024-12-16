@@ -24,12 +24,6 @@ body{
 
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
 /* Hero Container */
 .hero-container {
     position: relative;
@@ -54,7 +48,7 @@ body{
 #court-name {
     position: absolute;
     bottom: 16px;
-    left: 16px;
+    left: 8px;
     margin: 0;
     color: white;
     z-index: 1;
@@ -63,10 +57,11 @@ body{
 /* Map Container */
 .map-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 0px 16px;
+    gap: 16px;
 }
 
 /* Court Description */
@@ -92,6 +87,12 @@ body{
     font-size: 14px;
 }
 
+.button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .btn-orange,
 .btn-green {
     align-self: center; /* Centers the buttons horizontally */
@@ -109,4 +110,42 @@ body{
     height: auto; /* Maintain aspect ratio */
     object-fit: cover; /* Ensures images fill their container without distortion */
     object-position: center;
+}
+
+@media (min-width: 600px) {
+
+    #court-name {
+        left: 16px;
+        font-size: 60px;
+    }
+
+    .map-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0px 16px;
+        gap: 16px;
+    }
+
+    /* Facilities Container */
+    .facilities-container {
+        display: flex; /* Change from grid to flex */
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: space-evenly; /* Distribute items evenly */
+        width: 100%;
+        padding: 0px 32px; /* Adjust the padding if needed */
+    }
+    /* Button Container */
+    .button-container {
+        flex-direction: row;
+        gap: 64px; /* Space between buttons */
+        justify-content: center; /* Centers the buttons horizontally */
+    }
+
+    /* Gallery Container */
+    .gallery-container {
+        display: grid; /* Use grid layout for the gallery */
+        grid-template-columns: repeat(3, 1fr); /* Three columns of equal width */
+    }
 }

@@ -102,5 +102,11 @@ button {
     color: inherit;       /* Ensure text color doesn't change */
 }
 .content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     padding-top: 104px; /* Add top padding to prevent overlap with the fixed navbar */
 }
