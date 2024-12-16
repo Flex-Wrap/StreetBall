@@ -7,7 +7,12 @@
     --text-color-light: #FFFFFF;
     --text-color-dark: #0B0B1E;
     --text-color-gray: #BEC1C6;
+
+    /* RGB equivalents */
+    --background-color-light-rgb: 140, 255, 152; /* #8CFF98 */
+    --background-color-dark-rgb: 11, 11, 30;     /* #0B0B1E */
 }
+
 
 *{
     font-family: "Inter", sans-serif;
@@ -82,8 +87,10 @@ button {
 
 .logo {
     display: flex;
-    column-gap: 10px;
+    column-gap: 14px;
     cursor: pointer;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo img{
@@ -92,8 +99,8 @@ button {
 }
 
 .logo p{
+    font-size: 14px;
     font-style: normal;
-    text-decoration: underline;
 }
 
 .logo a{
@@ -104,6 +111,7 @@ button {
 .content {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 32px;
     width: 100%;
     max-width: 1440px;

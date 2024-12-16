@@ -1,17 +1,13 @@
 @import url(general.css);
 
 body{
-    background-color: var(--background-color-light);
+    background: linear-gradient(to bottom, var(--background-color-light) 50%, var(--background-color-dark)) 100%;
     justify-content: center;
     align-items: center;
 }
 
 .text-header{
     letter-spacing: 8px;
-}
-
-.content{
-    align-items: center;
 }
 
 .hero-container {
@@ -26,11 +22,12 @@ body{
     top: 0px;
     margin: 0; /* Remove default margin */
     padding: 8px 16px; /* Optional: Add some padding around the text */
-    background: rgba(0, 0, 0, 0.6); /* Optional: Add a semi-transparent background */
-    color: white; /* Ensure text is visible */
+    background: rgba(var(--background-color-light-rgb), 0.6); /* Optional: Add a semi-transparent background */
+    color: var(--background-color-dark); /* Ensure text is visible */
     font-size: 18px; /* Adjust font size */
     width: 100%;
     z-index: 1; /* Ensures it stays above the video */
+    text-align: center;
 }
 
 .hero-container .btn-orange {

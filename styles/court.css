@@ -64,20 +64,31 @@ body{
     gap: 16px;
 }
 
+.map-container p{
+    font-weight: 600;
+}
+
 /* Court Description */
 #court-description {
     padding: 0px 32px;
     line-height: 1.6;
     width: 100%;
     word-wrap: break-word;
+    hyphens: auto;
 }
+
+.content{
+    background: linear-gradient(to bottom, var(--background-color-dark) 18%, var(--background-color-light)) 100%;
+}
+
+
 
 /* Facilities Container */
 .facilities-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
-    gap: 8px;
+    gap: 16px;
     width: 100%;
     padding: 0px 64px;
 }
@@ -85,6 +96,7 @@ body{
 .facilities-container p {
     margin: 0;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .button-container{
