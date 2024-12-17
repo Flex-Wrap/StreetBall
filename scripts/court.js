@@ -63,6 +63,23 @@ function populateCourtPage() {
             window.open(googleMapsUrl, '_blank');
         });
     }
+    // Schedule button functionality
+    const scheduleButton = document.getElementById('btn-schedule');
+    if (scheduleButton) {
+        scheduleButton.addEventListener('click', () => {
+            // Redirect to schedule page with the court name in the query parameter
+            window.location.href = `schedule.html?court=${encodeURIComponent(court.name)}`;
+        });
+    }
+
+    // Create match button functionality
+    const createMatchButton = document.getElementById('btn-create-match');
+    if (createMatchButton) {
+        createMatchButton.addEventListener('click', () => {
+            // Redirect to make match page with the court name in the query parameter
+            window.location.href = `makematch.html?court=${encodeURIComponent(court.name)}`;
+        });
+    }
 }
 
 // Run the function on page load
