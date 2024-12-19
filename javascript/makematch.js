@@ -1,4 +1,4 @@
-import { addMatch, Match, getMatches } from "../scripts/firebase.js";
+import { addMatch, Match, getMatches } from "../javascript/firebase.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     // Populate the court picker
