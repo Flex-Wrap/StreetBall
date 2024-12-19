@@ -39,4 +39,8 @@ async function loadCourts() {
     }
 }
 
+document.getElementById('btn-schedule').addEventListener('click', () => {
+    window.location.href = 'schedule.html?court=ALL';
+});
+
 window.onload = loadCourts;
