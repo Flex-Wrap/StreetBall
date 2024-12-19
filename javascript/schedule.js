@@ -144,4 +144,11 @@ if (!courtName) {
   console.error('Court name not found in URL.');
 }
 
-displayMatches();
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    console.log("Page loaded from cache. Reloading matches.");
+  } else {
+    console.log("Page loaded normally. Reloading matches.");
+  }
+  displayMatches(); // Refresh the schedule
+});
