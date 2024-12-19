@@ -4,7 +4,7 @@ body{
     background: linear-gradient(180deg, var(--background-color-light) 70%, var(--background-color-dark) 100%);
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .text-header{
@@ -92,6 +92,11 @@ body{
 }
 
 @media (min-width: 600px) {
+
+    .hero-container{
+        max-height: 60vh;
+        height: 400px;
+    }
 
     .hero-video {
         width: 100%; /* Video spans the full width of the content */
