@@ -54,14 +54,16 @@ if (joinButton) {
 if (btnJoinOverlay) {
     btnJoinOverlay.addEventListener('click', async () => {
         const playerName = playerNameInput.value.trim();
-        
+
         if(playerName.toLowerCase() === "hitler"){
           alert("You little fucker :)");
           return;
         }
 
         if (playerName) {
-            // Fetch all matches from Firestore and find the current match by its Name, Court, and StartTime
+            // Disable the button to prevent multiple clicks
+            btnJoinOverlay.disabled = true;
+
             try {
                 const matchesList = await getMatches();
                 
@@ -69,9 +71,15 @@ if (btnJoinOverlay) {
                 const currentMatch = matchesList.find(m => m.id === match.id);
                 
                 if (currentMatch) {
+                    // Check if the player already exists in the match's player list
+                    if (currentMatch.Players.includes(playerName)) {
+                        alert("You are already in this match!");
+                        return;
+                    }
+
                     // Add the new player to the match's player list
                     currentMatch.Players.push(playerName);
-                    console.log("the id: "+currentMatch.id);
+
                     // Update the match document in Firestore with the new list of players
                     await updateMatchPlayers(currentMatch, currentMatch.Players);
 
@@ -88,12 +96,16 @@ if (btnJoinOverlay) {
             } catch (error) {
                 console.error("Error joining match:", error);
                 alert("Error joining match.");
+            } finally {
+                // Re-enable the button after processing
+                btnJoinOverlay.disabled = false;
             }
         } else {
             alert("Please enter your name to join.");
         }
     });
 }
+
 
 // Function to update the match players list in Firestore
 const updateMatchPlayers = async (match, players) => {
