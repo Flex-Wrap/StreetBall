@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Match</title>
+    <link rel="stylesheet" href="../styles/makematch.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../resources/images/ball.png">
+            <a href="home.html">
+                <p>Street Ball</p>
+                <p>Aarhus</p>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main content container -->
+    <div class="content-container">
+        <!-- Back Button -->
+        <div class="btn-back-container">
+            <div class="btn-back"></div>
+        </div>
+        <p class="text-header"> GET OUT THERE!</p>
+        <!-- Content -->
+        <div class="content">
+            <div class="form-group">
+                <label for="match-name">Match Name</label>
+                <input type="text" id="match-name" placeholder="SomeName">
+            </div>
+
+            <div class="form-group">
+                <label for="match-court">Court</label>
+                <select id="match-court">
+                    <!-- Courts will be dynamically inserted here by JavaScript -->
+                </select>
+            </div>            
+
+            <div class="form-group">
+                <label for="match-date">Date</label>
+                <input type="date" id="match-date" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div class="form-group">
+                <label for="match-start">Start Time</label>
+                <input type="time" id="match-start" placeholder="HH:mm">
+            </div>
+
+            <div class="form-group">
+                <label for="match-end">End Time</label>
+                <input type="time" id="match-end" placeholder="HH:mm">
+            </div>
+
+            <div class="form-group">
+                <label for="match-description">Description</label>
+                <input type="text" id="match-description" placeholder="Describe the match">
+            </div>
+        </div>
+
+        <!-- Create Button -->
+        <div class="btn-create-container">
+            <button class="btn-orange" id="btn-create-match">CREATE</button>
+        </div>
+    </div>
+    <script type="module" src="../scripts/makematch.js"></script>
+</body>
+</html>

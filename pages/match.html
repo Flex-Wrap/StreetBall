@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match</title>
+    <link rel="stylesheet" href="../styles/match.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="../resources/images/ball.png">
+            <a href="home.html">
+                <p>Street Ball</p>
+                <p>Aarhus</p>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Main content container -->
+    <div class="content-container">
+        <!-- Back Button -->
+        <div class="btn-back-container">
+            <div class="btn-back"></div>
+            <div class="court-container">
+            </div>
+        </div>
+        <p class="text-header" id="match-name"></p>
+        <p class="text-normal" id="match-description"></p>
+        <p id="text-line-up"> Line-up</p>
+        <!-- Content -->
+        <div class="content">
+        </div>
+
+        <!-- Create Button -->
+        <div class="btn-create-container">
+            <button class="btn-orange" id="btn-join">JOIN</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <p class="text-sub-header">Remember! Your team needs you!</p>
+            <div class="form-group">
+                <label for="player-name">Your Name</label>
+                <input type="text" id="player-name" placeholder="Messi">
+            </div>
+            <button class="btn-orange" id="btn-join-overlay">JOIN</button>
+        </div>
+    </div>
+    <script type="module" src="../scripts/match.js"></script>
+</body>
+</html>

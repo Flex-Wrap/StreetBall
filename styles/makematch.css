@@ -1,0 +1,142 @@
+@import url(general.css);
+body{
+    background-color: var(--background-color-light);
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh; /* Ensure the container takes the full height of the viewport */
+    padding-top: 104px; /* Avoid overlap with fixed navbar */
+    padding-bottom: 108px; /* Space for the create button */
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    max-height: 100vh;
+    background: linear-gradient(180deg, var(--background-color-light) 70%, var(--background-color-dark) 100%); /* Diagonal gradient from pink to orange */
+}
+
+/* Back Button Container */
+.btn-back-container {
+    position: absolute;
+    top: 104px; /* Just below the navbar */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    padding: 16px;
+    z-index: 999;
+}
+
+.btn-back {
+    background-image: url('../resources/images/arrow_back.png');
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.text-header{
+    padding-top: 76px;
+    text-align: center;
+}
+
+/* Content */
+.content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    overflow-y: auto; /* Make this section scrollable */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    padding: 16px;
+    padding-top: 76px;
+    max-height: calc(100vh - 104px - 64px); /* Ensures content div is scrollable */
+}
+
+.content::-webkit-scrollbar {
+    display: none; /* For Webkit browsers (Chrome, Safari, Edge) */
+}
+
+/* Create Button Container */
+.btn-create-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    z-index: 999;
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 32px;
+}
+
+/* Label for form elements */
+.form-group label {
+    color: var(--background-color-dark);
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+.form-group input {
+    width: 250px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--background-color-dark); /* Blue background */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+input::placeholder { /* Modern browsers */
+    color: gray;
+}
+
+/* Date input icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(0.5) saturate(0.3) brightness(0.5); /* Light gray */
+}
+
+/* Time input icon */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(0.5) saturate(0.3) brightness(0.5); /* Light gray */
+}
+
+/* Style for the Select Picker */
+#match-court {
+    width: 250px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--background-color-dark); /* Blue background */
+    color: white; /* Matches the input text color */
+    font-size: 16px;
+    text-align: center; /* Center-align the text */
+    appearance: none; /* Removes the default arrow styling */
+    -webkit-appearance: none; /* Ensures cross-browser consistency */
+    -moz-appearance: none; /* Ensures cross-browser consistency */
+}
+
+/* Add a custom dropdown arrow */
+#match-court {
+    background-image: url('../resources/images/arrow_down.png'); /* Replace with your own arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px; /* Adjust for the arrow space */
+}
+
+/* Remove the default arrow on older browsers */
+#match-court::-ms-expand {
+    display: none;
+}

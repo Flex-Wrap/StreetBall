@@ -1,9 +1,10 @@
 @import url(general.css);
 
 body{
-    background: linear-gradient(to bottom, var(--background-color-light) 50%, var(--background-color-dark)) 100%;
+    background: linear-gradient(180deg, var(--background-color-light) 70%, var(--background-color-dark) 100%);
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .text-header{

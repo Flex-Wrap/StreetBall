@@ -1,0 +1,192 @@
+@import url(general.css);
+body{
+    background-color: var(--background-color-light);
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh; /* Ensure the container takes the full height of the viewport */
+    padding-top: 104px; /* Avoid overlap with fixed navbar */
+    padding-bottom: 108px; /* Space for the create button */
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    max-height: 100vh;
+    background: linear-gradient(180deg, var(--background-color-light) 70%, var(--background-color-dark) 100%); /* Diagonal gradient from pink to orange */
+    animation: moveGradient 1s ease-in-out infinite; /* Slow wave movement */
+}
+
+.court-container {
+    display: flex;
+    gap: 16px;
+    justify-content: end;
+    padding-right: 16px;
+    align-items: center;
+    width: 300px;
+    height: 40px; /* Adjust height to your desired size */
+    background-color: var(--background-color-dark); /* Choose any background color */
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 20% 100%);
+    /* 
+        - 0% 0%: Top-left corner
+        - 100% 0%: Top-right corner
+        - 100% 100%: Bottom-right corner
+        - 20% 100%: Bottom-left corner, which is slanted inward from the left
+    */
+}
+
+/* Back Button Container */
+.btn-back-container {
+    position: absolute;
+    top: 104px; /* Just below the navbar */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.btn-back {
+    margin-top: 16px;
+    background-image: url('../resources/images/arrow_back.png');
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    margin-left:16px;
+    align-self: center;
+}
+
+.text-header{
+    padding-top: 76px;
+}
+
+/* Content */
+.content {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto; /* Make this section scrollable */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    padding: 16px;
+    padding-top: 76px;
+    max-height: calc(100vh - 104px - 64px); /* Ensures content div is scrollable */
+}
+
+.content::-webkit-scrollbar {
+    display: none; /* For Webkit browsers (Chrome, Safari, Edge) */
+}
+
+/* Create Button Container */
+.btn-create-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    z-index: 999;
+}
+
+
+#court-name {
+    color: white; /* Matches the input text color */
+    text-align: end;
+    font-size: 20px;
+}
+
+#match-start{
+    color: var(--accent-color);
+}
+
+#match-description{
+    margin-top: 16px;
+    padding-left: 32px;
+}
+
+#text-line-up{
+    margin-top: 32px;
+    width: 100%;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.content .text-sub-header{
+    min-width: 320px;
+    text-align: center;
+}
+
+.overlay-content .text-sub-header{
+    color: white;
+    width: 200px;
+}
+
+.overlay-content .btn-orange{
+    margin-bottom: 16px;
+}
+
+/* Overlay Styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Transparent background */
+    display: none;  /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;  /* Make sure it's on top of everything */
+}
+
+.overlay-content {
+    background: linear-gradient(180deg, var(--background-color-dark) 50%, var(--background-color-light) 100%);
+    padding: 20px;
+    width: 360px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 32px;
+}
+
+/* Label for form elements */
+.form-group label {
+    color: white;
+    margin-bottom: 8px;
+}
+
+/* Input field styling */
+.form-group input {
+    width: 250px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--background-color-dark); /* Blue background */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+input::placeholder { /* Modern browsers */
+    color: gray;
+}
+
+@media (min-width: 600px) {
+    .text-sub-header{
+        margin-bottom: 16px;
+    }
+}

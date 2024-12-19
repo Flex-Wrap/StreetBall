@@ -45,7 +45,7 @@ const createMatchCard = (match) => {
     // Match Day (Spans across all 3 columns)
     const matchDay = document.createElement('p');
     matchDay.classList.add('match-day');
-    const day = match.Date.split('/')[0];
+    const day = match.Date.split('-')[2];
     matchDay.textContent = `${day}`;
     card.appendChild(matchDay);
   
@@ -60,7 +60,11 @@ const createMatchCard = (match) => {
     numPlayers.classList.add('match-num-players');
     numPlayers.textContent = `${match.Players.length}/8`;
     card.appendChild(numPlayers);
-
+    card.addEventListener('click', function() {
+      const matchJSON = JSON.stringify(match);
+      const encodedMatch = encodeURIComponent(matchJSON);
+      window.location.href = `match.html?match=${encodedMatch}`;
+  });
     return card;
 };
 
@@ -81,17 +85,8 @@ const displayMatches = async () => {
 
   // Step 1: Sort all the matches by date and time
   const sortedMatches = courtMatches.sort((a, b) => {
-    // Split the date into day, month, and year
-    const [dayA, monthA, yearA] = a.Date.split('/');
-    const [dayB, monthB, yearB] = b.Date.split('/');
-
-    // Construct Date strings and create Date objects (yyyy-mm-ddThh:mm:ss)
-    const dateStringA = `${yearA}-${monthA}-${dayA}T${a.StartTime}`;
-    const dateStringB = `${yearB}-${monthB}-${dayB}T${b.StartTime}`;
-
-    // Create Date objects
-    const dateA = new Date(dateStringA);
-    const dateB = new Date(dateStringB);
+    const dateA = new Date(`${a.Date}T${a.StartTime}`);
+    const dateB = new Date(`${b.Date}T${b.StartTime}`);
     return dateA - dateB; // Ascending order
   });
 
@@ -99,7 +94,7 @@ const displayMatches = async () => {
   const matchesByMonth = {};
 
   sortedMatches.forEach(match => {
-    const [day, month, year] = match.Date.split('/').map(Number);
+    const [year, month, day] = match.Date.split('-').map(Number);
     const key = month + year*100; // Numeric key (month + year)
     
     if (!matchesByMonth[key]) {
@@ -113,7 +108,7 @@ const displayMatches = async () => {
   Object.keys(matchesByMonth).forEach(key => {
     // Create and append the month header using the first match of that month
     const firstMatch = matchesByMonth[key][0];
-    const monthElement = createMonth(firstMatch.Date.split('/')[1]); // Get the month from the first match
+    const monthElement = createMonth(firstMatch.Date.split('-')[1]); // Get the month from the first match
     scheduleContainer.appendChild(monthElement);
 
     // Render the matches for this month
