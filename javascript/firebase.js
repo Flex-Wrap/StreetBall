@@ -40,13 +40,16 @@ const addMatch = async (match) => {
       EndTime: match.EndTime,
       Name: match.Name,
       Players: match.Players,
-      StartTime: match.StartTime
+      StartTime: match.StartTime,
     });
     console.log("Document written with ID: ", docRef.id);
+    return docRef.id; // Return the ID of the new document
   } catch (error) {
     console.error("Error adding match: ", error);
+    throw error; // Propagate the error to the caller
   }
 };
+
 
 // Function to get all matches from Firestore
 const getMatches = async () => {

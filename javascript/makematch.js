@@ -100,9 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Add match to Firestore
             try {
-                await addMatch(newMatch);
+                matchId = await addMatch(newMatch);
                 alert("Match created successfully!");
-                const serializedMatch = encodeURIComponent(JSON.stringify(newMatch));
+                const serializedMatch = encodeURIComponent(JSON.stringify({
+                    ...newMatch,
+                    id: matchId // Include the match ID in the serialized object
+                }));
 
                 // Redirect to match.html with the serialized match object in the query string
                 window.location.href = `match.html?match=${serializedMatch}`;
